@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class GrossSalaryCalculator {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double basicSalary = input.nextDouble();
+        input.close();
+        double hra, da;
+        if (basicSalary < 15000) {
+            hra = 0.15 * basicSalary;  
+            da = 0.90 * basicSalary;    
+        } else {
+            hra = 5000;                 
+            da = 0.98 * basicSalary;    
+        }
+        double grossSalary = basicSalary + hra + da;
+        System.out.printf("%.2f%n", grossSalary);
+    }
+}
