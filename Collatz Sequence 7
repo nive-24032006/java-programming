@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number");
+        long n = sc.nextLong();
+        if (n <= 0) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        long count = 0;
+        System.out.println(n);
+        if (n == 1) {
+            System.out.println("count:0");
+            return;
+        }
+        while (n != 1) {
+            if (n % 2 == 0) {
+                n /= 2;
+            } else {
+                n = 3 * n + 1;
+            }
+            System.out.println(n);
+            count++;
+        }
+        System.out.println("count:" + count);
+    }
+}
