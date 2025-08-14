@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n < 100 || n > 999) {
+            System.out.println("No");
+            return;
+        }
+        int original = n;
+        int sumOfCubes = 0;
+        while (n > 0) {
+            int digit = n % 10;
+            sumOfCubes += digit * digit * digit;
+            n /= 10;
+        }
+        if (sumOfCubes == original) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
