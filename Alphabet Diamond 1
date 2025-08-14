@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if (n < 1) {
+            System.out.println("Invalid Input");
+            return;
+        }
+        int alphabet = 65; 
+        for (int row = 1; row <= n; row++) {
+            for (int space = n - row; space > 0; space--) {
+                System.out.print(" ");
+            }
+            for (int col = 0; col < row; col++) {
+                System.out.print((char) (alphabet + col));
+                if (col < row - 1) System.out.print(" ");
+            }
+            System.out.println();
+        }
+        for (int row = n - 1; row >= 1; row--) {
+            for (int space = n - row; space > 0; space--) {
+                System.out.print(" ");
+            }
+            for (int col = 0; col < row; col++) {
+                System.out.print((char) (alphabet + col));
+                if (col < row - 1) System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
+}
