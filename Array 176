@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] doorNumbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            doorNumbers[i] = sc.nextInt();
+        }
+        int address = sc.nextInt();
+        boolean found = false;
+        for (int i = 0; i < n; i++) {
+            if (doorNumbers[i] == address) {
+                System.out.println("Door Number is " + String.format("%03d", i) + "-DN");
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            System.out.println("-1");
+        }
+    }
+}
